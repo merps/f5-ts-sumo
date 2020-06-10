@@ -16,6 +16,8 @@ SumoLogic covering the work conducted with the assistence of Versent and SumoLog
 - [Background](#background)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
+    - [AWS](#aws)
+    - [SumoLogic](#sumologic)
 - [Configuration](#configuration)
 - [Usage](#usage)
 - [API](#api)
