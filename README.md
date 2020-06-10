@@ -4,7 +4,7 @@
 
 ![badge]()
 ![badge]()
-[![license](https://img.shields.io/github/license/:user/:repo.svg)](LICENSE)
+[![license](https://img.shields.io/github/license/:merps/:f5-ts-sumo.svg)](LICENSE)
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
 This document serves as an admendment to the well documented configuration guides for iApp and 
@@ -14,7 +14,9 @@ SumoLogic covering the work conducted with the assistence of Versent and SumoLog
 
 - [Security](#security)
 - [Background](#background)
-- [Install](#install)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Configuration](#configuration)
 - [Usage](#usage)
 - [API](#api)
 - [Contributing](#contributing)
@@ -83,13 +85,32 @@ environment | Environment Shortname name used for AWS Tag/Naming | String | `dem
 project | Project Shortname name used for AWS Tag/Naming | String | `project` | No
 ec2_key_name | EC2 KeyPair for Instance Creation | String | *NA* | **Yes**
 
-
-## Usage
-
+third, intialise and plan the terraform deployment as follows:
 ```
+cd secure/
+terraform init
+terraform plan --vars-file ../variables.tfvars
+```
+this will produce and display the deployment plan using the previously created `varibles.tfvars` file.
+
+Then finally to deploy the successfuly plan;
+```
+terraform apply --vars-file ../variables.tfvars
 ```
 
-Note: The `license` badge image link at the top of this file should be updated with the correct `:user` and `:repo`.
+This examples creates two c4.2xlage PAYG BIG-IP Marketplace instances, it is recommended to perfrom a
+`terraform destroy --vars-file` to not incur excessive usage costs outside of free tier.
+{: .alert .alert-warning}
+
+This deployment also covers the provisioning of the additional F5 prerequeset components so required for 
+deployment example so will not be covered here but is covered in the [F5 AWAF Demo](https://github.com/merps/f5devops/f5-swg-aws)]
+
+
+## Configuration
+
+### Any optional sections
+
+# Usage
 
 ### Any optional sections
 
@@ -111,4 +132,4 @@ Small note: If editing the Readme, please conform to the [standard-readme](https
 
 ## License
 
-[MIT © Richard McRichface.](../LICENSE)
+[MIT © merps.](../LICENSE)
