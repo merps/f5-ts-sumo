@@ -61,17 +61,16 @@ To support this deployment pattern the following components are required:
 ## Installation 
 
 The deployment environment used for development is coovered in detail [F5 AWAF Demo](https://github.com/merps/f5devops/f5-swg-aws),
-this is a AWS Deployment example of AutoScaling AWAF.
+this is a AWS Deployment example of AutoScaling AWAF. For simplicity, steps replicate this deployment are as follows;
 
-For simplicity, the steps replicate are as follows;
-
-first, clone the repo:
+First, clone the repo:
 
 ```
 git clone https://github.com/merps/f5devops.git
 
 ```
-second, create a [tfvars](https://www.terraform.io/docs/configuration/variables.html) file in the following format to deploy the environment;
+
+Second, create a [tfvars](https://www.terraform.io/docs/configuration/variables.html) file in the following format to deploy the environment;
 
 ### Inputs
 Name | Description | Type | Default | Required
@@ -85,25 +84,31 @@ environment | Environment Shortname name used for AWS Tag/Naming | String | `dem
 project | Project Shortname name used for AWS Tag/Naming | String | `project` | No
 ec2_key_name | EC2 KeyPair for Instance Creation | String | *NA* | **Yes**
 
-third, intialise and plan the terraform deployment as follows:
+
+Third, intialise and plan the terraform deployment as follows:
+
 ```
 cd secure/
 terraform init
 terraform plan --vars-file ../variables.tfvars
 ```
+
 this will produce and display the deployment plan using the previously created `varibles.tfvars` file.
+
 
 Then finally to deploy the successfuly plan;
 ```
 terraform apply --vars-file ../variables.tfvars
 ```
 
-This examples creates two c4.2xlage PAYG BIG-IP Marketplace instances, it is recommended to perfrom a
+
+This architecture deploys two c4.2xlage PAYG BIG-IP Marketplace instances, it is recommended to perfrom a
 `terraform destroy --vars-file` to not incur excessive usage costs outside of free tier.
 {: .alert .alert-warning}
 
+
 This deployment also covers the provisioning of the additional F5 prerequeset components so required for 
-deployment example so will not be covered here but is covered in the [F5 AWAF Demo](https://github.com/merps/f5devops/f5-swg-aws)]
+deployment example covered in the [F5 AWAF Demo](https://github.com/merps/f5devops/f5-swg-aws)]
 
 
 ## Configuration
