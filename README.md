@@ -47,7 +47,7 @@ This configuration outline currently only supports the deployment pattern as det
 To support this deployment pattern the following components are required:
 
 * F5 BIP-IP (physical or VE)
-* SumoLogic configured [HTTP Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors "Hosted Collectors").
+* SumoLogic configured [HTTP Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors)
 * F5 Toolchain Components:
     * [F5 Application Services v3 (AS3)](https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/)
     * [F5 Telemetry Streaming (TS)](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/)
@@ -59,6 +59,11 @@ To support this deployment pattern the following components are required:
 
 
 ## Installation 
+
+This section will over both the provisioning of the previously mentioned architecture using Terrafrom along
+with how-to steps for SumoLogic Hosted Collectors
+
+### AWS
 
 The deployment environment used for development is coovered in detail [F5 AWAF Demo](https://github.com/merps/f5devops/f5-swg-aws),
 this is a AWS Deployment example of AutoScaling AWAF. For simplicity, steps replicate this deployment are as follows;
@@ -73,7 +78,7 @@ git clone https://github.com/merps/f5devops.git
 
 Second, create a [tfvars](https://www.terraform.io/docs/configuration/variables.html) file in the following format to deploy the environment;
 
-### Inputs
+#### Inputs
 Name | Description | Type | Default | Required
 ---|---|---|---|---
 cidr | CIDR Range for VPC | String | *NA* | **Yes**
@@ -102,13 +107,22 @@ Then finally to deploy the successfuly plan;
 terraform apply --vars-file ../variables.tfvars
 ```
 
+
+
 > **_NOTE:_**  This architecture deploys two c4.2xlage PAYG BIG-IP Marketplace instances, it is 
 recommended to perfperform a `terraform destroy --vars-file` to not incur excessive usage costs 
 outside of free tier.
 
 
+
+
 This deployment also covers the provisioning of the additional F5 prerequeset components so required for 
 deployment example covered in the [F5 AWAF Demo](https://github.com/merps/f5devops/f5-swg-aws)]
+
+
+### SumoLogic
+
+Provisioning of hosted collectors can be found locate [here](https://help.sumologic.com/03Send-Data/Hosted-Collectors "Hosted Collectors").
 
 
 ## Configuration
