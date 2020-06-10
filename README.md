@@ -101,10 +101,8 @@ Then finally to deploy the successfuly plan;
 terraform apply --vars-file ../variables.tfvars
 ```
 
-
-This architecture deploys two c4.2xlage PAYG BIG-IP Marketplace instances, it is recommended to perfrom a
+> **_NOTE:_**  This architecture deploys two c4.2xlage PAYG BIG-IP Marketplace instances, it is recommended to perfrom a
 `terraform destroy --vars-file` to not incur excessive usage costs outside of free tier.
-{: .alert .alert-warning}
 
 
 This deployment also covers the provisioning of the additional F5 prerequeset components so required for 
