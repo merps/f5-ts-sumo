@@ -70,6 +70,7 @@ git clone https://github.com/merps/f5devops.git
 
 ```
 
+
 Second, create a [tfvars](https://www.terraform.io/docs/configuration/variables.html) file in the following format to deploy the environment;
 
 ### Inputs
@@ -101,8 +102,9 @@ Then finally to deploy the successfuly plan;
 terraform apply --vars-file ../variables.tfvars
 ```
 
-> **_NOTE:_**  This architecture deploys two c4.2xlage PAYG BIG-IP Marketplace instances, it is recommended to perfrom a
-`terraform destroy --vars-file` to not incur excessive usage costs outside of free tier.
+> **_NOTE:_**  This architecture deploys two c4.2xlage PAYG BIG-IP Marketplace instances, it is 
+recommended to perfperform a `terraform destroy --vars-file` to not incur excessive usage costs 
+outside of free tier.
 
 
 This deployment also covers the provisioning of the additional F5 prerequeset components so required for 
