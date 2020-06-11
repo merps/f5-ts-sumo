@@ -132,8 +132,7 @@ As per archicture deployment, to configure HTTP hosted collector for the consump
 
 
 2. Select Manage Data -> Collections
-!["Collections"](images/collection.png)
-
+<img src=images/collection.png width="200">
 
 3. Select *"Add Collector"* - to add new Hosted Collection
 !["Collector"](images/new.png)
