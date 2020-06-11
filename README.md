@@ -54,6 +54,7 @@ To support this deployment pattern the following components are required:
     * [F5 Application Services v3 (AS3)](https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/)
     * [F5 Telemetry Streaming (TS)](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/)
 * [Postman](https://www.postman.com/)
+* [SumoLogic] Administrator account access.(https://service.sumologic.com)
 * [Terraform CLI](https://www.terraform.io/docs/cli-index.html)
 * [git](https://git-scm.com/)
 * [AWS CLI](https://aws.amazon.com/cli/) access.
@@ -125,6 +126,42 @@ deployment example covered in the [F5 AWAF Demo](https://github.com/merps/f5devo
 ### SumoLogic
 
 Provisioning of hosted collectors can be found locate [here](https://help.sumologic.com/03Send-Data/Hosted-Collectors "Hosted Collectors").
+
+As per archicture deployment, to configure HTTP hosted collector for the consumption of TS:
+1. [Login](https://service.sumologic.com) with Adminstrator account access.
+
+
+2. Select Manage Data -> Collections
+!["Collections"](images/collection.png)
+
+
+3. Select *"Add Collector"* - to add new Hosted Collection
+!["Collector"](images/new.png)
+
+
+4. Select *"Hosted Collector"* for Collector Type.
+!["Collector Type"](images/collector_type.png)
+
+
+5. Populate *"Add Hosted Collector"* dialog box as per below, then save:
+!["Hosted Collector Configuration"](images/collector_config.png)
+
+
+6. Select **"OK"** to confirm new data source configuration
+!["Confirm"](images/new_source.png)
+
+
+7. Select *"HTTP Logs & Metrics"*
+!["Source Type"](images/source_type.png)
+
+
+8. Polulate source configuration as per below, then save.
+!["Source Details"](images/source_details.png)
+
+9. Save complete *"Endpoint URL"* as vars and url will be used for the configuration of Telemetry
+Streaming configuration.
+!["Endpoint URL"](images/source_endpoint.png)
+
 
 
 ## Configuration
