@@ -54,7 +54,7 @@ To support this deployment pattern the following components are required:
     * [F5 Application Services v3 (AS3)](https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/)
     * [F5 Telemetry Streaming (TS)](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/)
 * [Postman](https://www.postman.com/)
-* [SumoLogic] Administrator account access.(https://service.sumologic.com)
+* [SumoLogic](https://service.sumologic.com) Administrator account access.
 * [Terraform CLI](https://www.terraform.io/docs/cli-index.html)
 * [git](https://git-scm.com/)
 * [AWS CLI](https://aws.amazon.com/cli/) access.
