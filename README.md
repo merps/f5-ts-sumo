@@ -132,34 +132,52 @@ As per archicture deployment, to configure HTTP hosted collector for the consump
 
 
 2. Select Manage Data -> Collections
-<img src=images/collection.png width="400">
+
+
+<img src=images/collection.png width="400" class="center">
 
 3. Select *"Add Collector"* - to add new Hosted Collection
-<img src=images/new.png width="400">
+
+
+<img src=images/new.png width="400" class="center">
 
 
 4. Select *"Hosted Collector"* for Collector Type.
-<img src=images/collector_type.png width="400">
+
+
+<img src=images/collector_type.png width="400" class="center">
 
 
 5. Populate *"Add Hosted Collector"* dialog box as per below, then save:
-<img src=images/collector_config.png width="400">
+
+
+<img src=images/collector_config.png width="400" class="center">
 
 
 6. Select **"OK"** to confirm new data source configuration
-<img src=images/new_source.png width="400">
+
+
+<img src=images/new_source.png width="400" class="center">
 
 
 7. Select *"HTTP Logs & Metrics"*
-<img src=images/source_type.png width="400">
+
+
+<img src=images/source_type.png width="400" class="center">
 
 
 8. Polulate source configuration as per below, then save.
-<img src=images/source_details.png width="400">
+
+
+<img src=images/source_details.png width="400" class="center">
+
+
 
 9. Save complete *"Endpoint URL"* as vars and url will be used for the configuration of Telemetry
 Streaming configuration.
-<img src=images/source_endpoint.png width="400">
+
+
+<img src=images/source_endpoint.png width="400" class="center">
 
 
 
