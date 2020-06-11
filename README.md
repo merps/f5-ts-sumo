@@ -34,10 +34,7 @@ as such egress is required for HTTP.
 ## Background
 
 This work was undertaken to support Telemetry Streaming for Internet accessable BIG-IP's to, initially,
-replicate existing Anayltics iApp.
-
-As this is merely an admendment, how-to guide, it will only document variations to already well 
-documented procedures for both SumoLogic and F5.
+replicate existing Anayltics iApp. As this is merely an admendment, how-to guide, it will only document variations to already well documented procedures for both SumoLogic and F5.
 
 This configuration outline currently only supports the deployment pattern as detailed in the diagram below,
 
@@ -64,22 +61,20 @@ To support this deployment pattern the following components are required:
 ## Installation 
 
 This section will over both the provisioning of the previously mentioned architecture using Terrafrom along
-with how-to steps for SumoLogic Hosted Collectors
+with how-to steps for SumoLogic Hosted Collectors.
 
-### AWS
+
+### *AWS*
 
 The deployment environment used for development is coovered in detail [F5 AWAF Demo](https://github.com/merps/f5devops/f5-swg-aws),
 this is a AWS Deployment example of AutoScaling AWAF. For simplicity, steps replicate this deployment are as follows;
 
-First, clone the repo:
-
+***a)***    First, clone the repo:
 ```
 git clone https://github.com/merps/f5devops.git
-
 ```
 
-
-Second, create a [tfvars](https://www.terraform.io/docs/configuration/variables.html) file in the following format to deploy the environment;
+***b)***    Second, create a [tfvars](https://www.terraform.io/docs/configuration/variables.html) file in the following format to deploy the environment;
 
 #### Inputs
 Name | Description | Type | Default | Required
@@ -94,10 +89,9 @@ project | Project Shortname name used for AWS Tag/Naming | String | `project` | 
 ec2_key_name | EC2 KeyPair for Instance Creation | String | *NA* | **Yes**
 
 
-Third, intialise and plan the terraform deployment as follows:
-
+***c)***    Third, intialise and plan the terraform deployment as follows:
 ```
-cd secure/
+cd f5devops/f5-sgw-aws/secure/
 terraform init
 terraform plan --vars-file ../variables.tfvars
 ```
@@ -105,29 +99,23 @@ terraform plan --vars-file ../variables.tfvars
 this will produce and display the deployment plan using the previously created `varibles.tfvars` file.
 
 
-Then finally to deploy the successfuly plan;
+***d)***    Then finally to deploy the successfuly plan;
 ```
 terraform apply --vars-file ../variables.tfvars
 ```
 
-
-
 > **_NOTE:_**  This architecture deploys two c4.2xlage PAYG BIG-IP Marketplace instances, it is 
-recommended to perfperform a `terraform destroy --vars-file` to not incur excessive usage costs 
-outside of free tier.
-
-
+recommended to perform a `terraform destroy` to not incur excessive usage costs outside of free tier.
 
 
 This deployment also covers the provisioning of the additional F5 prerequeset components so required for 
-deployment example covered in the [F5 AWAF Demo](https://github.com/merps/f5devops/f5-swg-aws)]
+deployment example covered in the [F5 AWAF Demo](https://github.com/merps/f5devops/f5-swg-aws)
 
 
-### SumoLogic
+### *SumoLogic*
 
-Provisioning of hosted collectors can be found locate [here](https://help.sumologic.com/03Send-Data/Hosted-Collectors "Hosted Collectors").
 
-As per archicture deployment, to configure HTTP hosted collector for the consumption of TS:
+Provisioning of hosted collectors can be found locate [here](https://help.sumologic.com/03Send-Data/Hosted-Collectors "Hosted Collectors").  As per archicture deployment, to configure HTTP hosted collector for the consumption of TS:
 
 
 1. [Login](https://service.sumologic.com) with Adminstrator account access.
