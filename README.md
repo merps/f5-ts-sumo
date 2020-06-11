@@ -128,48 +128,51 @@ deployment example covered in the [F5 AWAF Demo](https://github.com/merps/f5devo
 Provisioning of hosted collectors can be found locate [here](https://help.sumologic.com/03Send-Data/Hosted-Collectors "Hosted Collectors").
 
 As per archicture deployment, to configure HTTP hosted collector for the consumption of TS:
+
+
 1. [Login](https://service.sumologic.com) with Adminstrator account access.
 
 
 2. Select Manage Data -> Collections
 
 
-<img src=images/collection.png width="400" class="center">
+<center><img src=images/collection.png width="400"></center>
+
 
 3. Select *"Add Collector"* - to add new Hosted Collection
 
 
-<img src=images/new.png width="400" class="center">
+<center><img src=images/new.png width="400"></center>
 
 
 4. Select *"Hosted Collector"* for Collector Type.
 
 
-<img src=images/collector_type.png width="400" class="center">
+<center><img src=images/collector_type.png width="400"></center>
 
 
-5. Populate *"Add Hosted Collector"* dialog box as per below, then save:
+5. Populate *"Add Hosted Collector"* dialog box as per below, then save.
 
 
-<img src=images/collector_config.png width="400" class="center">
+<center><img src=images/collector_config.png width="400"></center>
 
 
 6. Select **"OK"** to confirm new data source configuration
 
 
-<img src=images/new_source.png width="400" class="center">
+<center><img src=images/new_source.png width="400"></center>
 
 
 7. Select *"HTTP Logs & Metrics"*
 
 
-<img src=images/source_type.png width="400" class="center">
+<center><img src=images/source_type.png width="400"></center>
 
 
 8. Polulate source configuration as per below, then save.
 
 
-<img src=images/source_details.png width="400" class="center">
+<center><img src=images/source_details.png width="400"></center>
 
 
 
@@ -177,7 +180,7 @@ As per archicture deployment, to configure HTTP hosted collector for the consump
 Streaming configuration.
 
 
-<img src=images/source_endpoint.png width="400" class="center">
+<center><img src=images/source_endpoint.png width="400"></center>
 
 
 
