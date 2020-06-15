@@ -281,6 +281,8 @@ As previously, steps to configure;
     "schemaVersion": "1.6.0"    
 }
 ```
+3. Push updated TS declaration to cBIG-IP.
+
 
 # Usage
 
@@ -296,6 +298,7 @@ List of task to make the process my automated;
 
 - [ ] Create workflow for Jenkins/GitLab to deploy dashboard
 - [ ] Workflow improvements for DO/AS3/TS
+- [ ] Usage Instructions(?)
 
 ## Contributing
 
