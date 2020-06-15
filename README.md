@@ -157,7 +157,7 @@ Provisioning of hosted collectors can be found locate [here](https://help.sumolo
 <center><img src=images/source_type.png width="400"></center>
 
 
-8. Polulate source configuration as per below, then save.
+8. Populate source configuration as per below, then save.
 
 
 <center><img src=images/source_details.png width="400"></center>
@@ -174,25 +174,134 @@ Streaming configuration.
 
 ## Configuration
 
-### Any optional sections
+Similar to the previous section this section will serve only as a quick configuration and amendment
+to the existing SumoLogic and F5 Telemetry System Installation Guides.
+
+### SumoLogic
+
+For detailed instructions on how to [Import Content in Library](https://help.sumologic.com/05Search/Library/Export-and-Import-Content-in-the-Library) refer to that link.
+
+For consistency, to import test dashboard for TS, perform the following steps;
+
+1. [Login](https://service.sumologic.com) with Administrator account access.
+
+2. Navigate to *"Personal"* folders, select ***Import*** from the options menu;
+
+<center><img src=images/import.png width="400"></center>
+
+3. Enter **Name** into **Content Import** dialog, this must be unique.
+
+<center><img src=images/import_content.png width="400"></center>
+
+4. Paste contents of [f5-sumo-ts.json](http://github.com/merps/f5devops/f5-sumo-ts/f5-sumo-ts.json) in **JSON** dialog.
+
+5. Click import, this is only available if the json is valid.
+
+### F5 cBIG-IP
+
+As with Sumologic, detailed instructions for the deployment and configuration for TS is located at 
+[F5 Telemetry Streaming](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/) with detailed [Sumo Logic](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/setting-up-consumer.html#sumologic-ref) confuguration instructions.
+
+As previously, steps to configure;
+
+1. From the previously created SumoLogic Hosted Collector, extract the follow:
+
+    ***a)*** FQDN = Host
+
+    ***b)*** path = uri
+
+    ***c)*** ciphertext = encrypted token as part of uri
+
+2. Update TS declations with the variables as extracted from ***Endpoint URL*** as per example;
+
+```
+{
+    "class": "Telemetry",
+    "TS_System": {
+        "class": "Telemetry_System",
+        "systemPoller": {
+            "interval": 60,
+            "enable": true,
+            "trace": false,
+            "actions": [
+                {
+                    "setTag": {
+                        "tenant": "`T`",
+                        "application": "`A`"
+                    },
+                    "enable": true
+                }
+            ]
+        },
+        "enable": true,
+        "trace": false,
+        "host": "localhost",
+        "port": 8100,
+        "protocol": "http"
+    },
+    "TS_Listener": {
+        "class": "Telemetry_Listener",
+        "port": 6514,
+        "enable": true,
+        "trace": false,
+        "match": "",
+        "actions": [
+            {
+                "setTag": {
+                    "tenant": "`T`",
+                    "application": "`A`"
+                },
+                "enable": true
+            }
+        ]
+    },
+    "Poller":{ 
+       "class":"Telemetry_System_Poller",
+       "interval":60,
+       "enable":true,
+       "trace":false,
+       "allowSelfSignedCert":false,
+       "host":"localhost",
+       "port":8100,
+       "protocol":"http"
+    },
+    "SumoLogic_Consumer": {
+        "class": "Telemetry_Consumer",
+        "type": "Sumo_Logic",
+        "host": "collectors.au.sumologic.com",
+        "protocol": "https",
+        "port": 443,
+        "enable": true,
+        "trace": false,
+        "path": "/receiver/v1/http/",
+        "passphrase": {
+            "cipherText": "this is a secret"
+        }
+    },
+    "schemaVersion": "1.6.0"    
+}
+```
 
 # Usage
 
-### Any optional sections
+### As per TODO 
 
 ## API
 
-### Any optional sections
+### As per TODo
 
-## More optional sections
+## TODO
+
+List of task to make the process my automated;
+
+- [ ] Create workflow for Jenkins/GitLab to deploy dashboard
+- [ ] Workflow improvements for DO/AS3/TS
 
 ## Contributing
 
 See [the contributing file](CONTRIBUTING.md)!
 
 PRs accepted.
-
-Small note: If editing the Readme, please conform to the [standard-readme](https://github.com/RichardLitt/standard-readme) specification.
 
 ### Any optional sections
 
