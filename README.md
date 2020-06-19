@@ -1,9 +1,6 @@
 # F5 SumoLogic Refactor
 
-![banner]()
 
-![badge]()
-![badge]()
 [![license](https://img.shields.io/github/license/:merps/:f5-ts-sumo.svg)](LICENSE)
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
@@ -38,8 +35,7 @@ replicate existing Anayltics iApp. As this is merely an admendment, how-to guide
 
 This configuration outline currently only supports the deployment pattern as detailed in the diagram below,
 
-![alt text](https://github.com/thing/here "Reference Deployment")
-
+<center><img src=images/config-diagram-autoscale-ltm.png width="400"></center>
 
 ## Prerequisites
 
@@ -308,8 +304,9 @@ For further reference to the use of AS3 and TS templates please refer to the [AS
 List of task to make the process my automated;
 
 - [ ] Create work-flow for Jenkins/GitLab to deploy dashboard
-- [ ] work-flow improvements for DO/AS3/TS
+- [ ] --work-flow improvements for DO/AS3/TS--
 - [ ] Usage Instructions(?)
+
 
 
 ## Contributing
