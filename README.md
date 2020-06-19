@@ -319,4 +319,4 @@ PRs accepted.
 
 ## License
 
-[MIT © merps.](../LICENSE)
+[Apache](../LICENSE)
