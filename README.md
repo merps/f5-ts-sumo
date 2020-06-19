@@ -304,7 +304,7 @@ For further reference to the use of AS3 and TS templates please refer to the [AS
 List of task to make the process my automated;
 
 - [ ] Create work-flow for Jenkins/GitLab to deploy dashboard
-- [ ] --work-flow improvements for DO/AS3/TS--
+- [x] ~~work-flow improvements for DO/AS3/TS~~  Added Jinj2 templates
 - [ ] Usage Instructions(?)
 
 
