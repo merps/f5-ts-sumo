@@ -197,7 +197,7 @@ For consistency, to import test dashboard for TS, perform the following steps;
 
 5. Click import, this is only available if the json is valid.
 
-### F5 cBIG-IP
+### F5 BIG-IP
 
 As with Sumologic, detailed instructions for the deployment and configuration for TS is located at 
 [F5 Telemetry Streaming](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/) with detailed [Sumo Logic](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/setting-up-consumer.html#sumologic-ref) configuration instructions.
@@ -212,9 +212,9 @@ As previously, steps to configure;
 
     ***c)*** ciphertext = encrypted token as part of uri
 
-2. Update TS declations with the variables as extracted from ***Endpoint URL*** as per example;
+2. Update TS declarations with the variables as extracted from ***Endpoint URL*** as per example;
 
-```
+```json
 {
     "class": "Telemetry",
     "TS_System": {
@@ -236,12 +236,12 @@ As previously, steps to configure;
         "enable": true,
         "trace": false,
         "host": "localhost",
-        "port": 8100,
+        "port": 8100,  # As per local listener deployment - refer to Usage
         "protocol": "http"
     },
     "TS_Listener": {
         "class": "Telemetry_Listener",
-        "port": 6514,
+        "port": 6514, # As per local listener deployment - refer to Usage
         "enable": true,
         "trace": false,
         "match": "",
@@ -262,7 +262,7 @@ As previously, steps to configure;
        "trace":false,
        "allowSelfSignedCert":false,
        "host":"localhost",
-       "port":8100,
+       "port":8100, # As per local listener deployment - refer to Usage
        "protocol":"http"
     },
     "SumoLogic_Consumer": {
@@ -284,12 +284,18 @@ As previously, steps to configure;
 3. Push updated TS declaration to BIG-IP.
 
 > **_NOTE:_** This configuration declares the external consumer for the `telemetry_traffic_log_profile` as
-declared in the deployment environment [installation](#installation) section.
+declared in the deployment environment [installation](#installation) section. 
 
 
 # Usage
 
-### As per TODO 
+To replicate the Telemetry Streaming configuration for other environments this can be achieved by using
+the Jinja2 templates located in [Telemetry Streaming(TS)](src/f5_ts/), these are;
+
+- [as3-common-declaration.j2](src/f5_ts/as3-common-declaration.j2) defines Common BIG-IP Shared TS local listener.
+- [ts-declaration.j2](src/f5_ts/ts-declaration.j2) defines TS configuration as outlined above.
+
+For further reference to the use of AS3 and TS templates please refer to the [AS3 User Guide](https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/userguide/)
 
 
 ## API
@@ -301,8 +307,8 @@ declared in the deployment environment [installation](#installation) section.
 
 List of task to make the process my automated;
 
-- [ ] Create workflow for Jenkins/GitLab to deploy dashboard
-- [ ] Workflow improvements for DO/AS3/TS
+- [ ] Create work-flow for Jenkins/GitLab to deploy dashboard
+- [ ] work-flow improvements for DO/AS3/TS
 - [ ] Usage Instructions(?)
 
 
