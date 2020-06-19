@@ -286,7 +286,7 @@ declared in the deployment environment [installation](#installation) section.
 # Usage
 
 To replicate the Telemetry Streaming configuration for other environments this can be achieved by using
-the Jinja2 templates located in [Telemetry Streaming(TS)](src/f5_ts/), these are;
+the Jinja templates located in [Telemetry Streaming(TS)](src/f5_ts/), these are;
 
 - [as3-common-declaration.j2](src/f5_ts/as3-common-declaration.j2) defines Common BIG-IP Shared TS local listener.
 - [ts-declaration.j2](src/f5_ts/ts-declaration.j2) defines TS configuration as outlined above.
@@ -304,7 +304,7 @@ For further reference to the use of AS3 and TS templates please refer to the [AS
 List of task to make the process my automated;
 
 - [ ] Create work-flow for Jenkins/GitLab to deploy dashboard
-- [x] ~~work-flow improvements for DO/AS3/TS~~  Added Jinj2 templates
+- [x] ~~work-flow improvements for DO/AS3/TS~~  Added [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) templates
 - [ ] Usage Instructions(?)
 
 
