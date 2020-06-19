@@ -200,7 +200,7 @@ For consistency, to import test dashboard for TS, perform the following steps;
 ### F5 cBIG-IP
 
 As with Sumologic, detailed instructions for the deployment and configuration for TS is located at 
-[F5 Telemetry Streaming](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/) with detailed [Sumo Logic](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/setting-up-consumer.html#sumologic-ref) confuguration instructions.
+[F5 Telemetry Streaming](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/) with detailed [Sumo Logic](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/setting-up-consumer.html#sumologic-ref) configuration instructions.
 
 As previously, steps to configure;
 
@@ -268,29 +268,34 @@ As previously, steps to configure;
     "SumoLogic_Consumer": {
         "class": "Telemetry_Consumer",
         "type": "Sumo_Logic",
-        "host": "collectors.au.sumologic.com",
-        "protocol": "https",
-        "port": 443,
+        "host": "<SumoLogic Local Endpoint FQDN>",
+        "protocol": "https", # Default 
+        "port": 443, # Default 
         "enable": true,
         "trace": false,
         "path": "/receiver/v1/http/",
         "passphrase": {
-            "cipherText": "this is a secret"
+            "cipherText": "<this is a secret>"
         }
     },
     "schemaVersion": "1.6.0"    
 }
 ```
-3. Push updated TS declaration to cBIG-IP.
+3. Push updated TS declaration to BIG-IP.
+
+> **_NOTE:_** This configuration declares the external consumer for the `telemetry_traffic_log_profile` as
+declared in the deployment environment [installation](#installation) section.
 
 
 # Usage
 
 ### As per TODO 
 
+
 ## API
 
-### As per TODo
+### As per TODO
+
 
 ## TODO
 
@@ -299,6 +304,7 @@ List of task to make the process my automated;
 - [ ] Create workflow for Jenkins/GitLab to deploy dashboard
 - [ ] Workflow improvements for DO/AS3/TS
 - [ ] Usage Instructions(?)
+
 
 ## Contributing
 
