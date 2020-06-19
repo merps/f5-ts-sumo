@@ -4,8 +4,8 @@
 [![license](https://img.shields.io/github/license/:merps/:f5-ts-sumo.svg)](LICENSE)
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-This document serves as an admendment to the well documented configuration guides for iApp and 
-SumoLogic covering the work conducted with the assistence of Versent and SumoLogic development.
+This document serves as an amendment to the well documented configuration guides for iApp and 
+SumoLogic covering the work conducted with the assistance of Versent and SumoLogic development.
 
 ## Table of Contents
 
@@ -62,7 +62,7 @@ with how-to steps for SumoLogic Hosted Collectors.
 
 ### *AWS*
 
-The deployment environment used for development is coovered in detail [F5 AWAF Demo](https://github.com/merps/f5devops/f5-swg-aws),
+The deployment environment used for development is covered in detail [F5 AWAF Demo](https://github.com/merps/f5devops/f5-swg-aws),
 this is a AWS Deployment example of AutoScaling AWAF. For simplicity, steps replicate this deployment are as follows;
 
 ***a)***    First, clone the repo:
@@ -77,11 +77,11 @@ Name | Description | Type | Default | Required
 ---|---|---|---|---
 cidr | CIDR Range for VPC | String | *NA* | **Yes**
 region | AWS Deployment Region | String | *NA* | **Yes**
-azs | AWS Avaliability Zones | List | *NA* | **Yes** 
+azs | AWS Availability Zones | List | *NA* | **Yes** 
 secops-profile | SecurityOperations AWS Profile | String | `default` | **Yes**
 customer | Customer/Client Short name used for AWS Tag/Naming | String | `customer` | No
-environment | Environment Shortname name used for AWS Tag/Naming | String | `demo` | No
-project | Project Shortname name used for AWS Tag/Naming | String | `project` | No
+environment | Environment short-name name used for AWS Tag/Naming | String | `demo` | No
+project | Project short-name name used for AWS Tag/Naming | String | `project` | No
 ec2_key_name | EC2 KeyPair for Instance Creation | String | *NA* | **Yes**
 
 
@@ -92,10 +92,10 @@ terraform init
 terraform plan --vars-file ../variables.tfvars
 ```
 
-this will produce and display the deployment plan using the previously created `varibles.tfvars` file.
+this will produce and display the deployment plan using the previously created `variables.tfvars` file.
 
 
-***d)***    Then finally to deploy the successfuly plan;
+***d)***    Then finally to deploy the successful plan;
 ```
 terraform apply --vars-file ../variables.tfvars
 ```
@@ -111,7 +111,7 @@ deployment example covered in the [F5 AWAF Demo](https://github.com/merps/f5devo
 ### *SumoLogic*
 
 
-Provisioning of hosted collectors can be found locate [here](https://help.sumologic.com/03Send-Data/Hosted-Collectors "Hosted Collectors").  As per archicture deployment, to configure HTTP hosted collector for the consumption of TS:
+Provisioning of hosted collectors can be found locate [here](https://help.sumologic.com/03Send-Data/Hosted-Collectors "Hosted Collectors").  As per architecture deployment, to configure HTTP hosted collector for the consumption of TS:
 
 
 1. [Login](https://service.sumologic.com) with Adminstrator account access.
@@ -195,7 +195,7 @@ For consistency, to import test dashboard for TS, perform the following steps;
 
 ### F5 BIG-IP
 
-As with Sumologic, detailed instructions for the deployment and configuration for TS is located at 
+As with Sumo Logic, detailed instructions for the deployment and configuration for TS is located at 
 [F5 Telemetry Streaming](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/) with detailed [Sumo Logic](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/setting-up-consumer.html#sumologic-ref) configuration instructions.
 
 As previously, steps to configure;
