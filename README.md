@@ -1,7 +1,7 @@
 # F5 SumoLogic Refactor
 
 
-[![license](https://img.shields.io/github/license/:merps/:f5-ts-sumo.svg)](LICENSE)
+[![license](https://img.shields.io/github/license/merps/f5-ts-sumo)](LICENSE)
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
 This document serves as an amendment to the well documented configuration guides for iApp and 
